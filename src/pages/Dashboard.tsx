@@ -129,7 +129,7 @@ function DocumentTable({ documents, loading, emptyMessage }: { documents: Docume
               <SelectItem value="all">All Status</SelectItem>
               <SelectItem value="Pending">Pending</SelectItem>
               <SelectItem value="In Transit">In Transit</SelectItem>
-              <SelectItem value="Received">Received</SelectItem>
+              <SelectItem value="Wrong Delivery">Wrong Delivery</SelectItem>
               <SelectItem value="Mismatch Warning">Warning</SelectItem>
             </SelectContent>
           </Select>
@@ -357,7 +357,7 @@ export default function Dashboard() {
       </div>
 
       {isSuperAdmin ? (
-        <DocumentTable documents={documents} loading={loading} emptyMessage="No documents in the system yet." />
+        <DocumentTable documents={documents.filter(d => d.status !== "Received")} loading={loading} emptyMessage="No active documents in the system." />
       ) : (
         <Tabs defaultValue="incoming" className="space-y-4">
           <TabsList>
@@ -370,10 +370,10 @@ export default function Dashboard() {
             <TabsTrigger value="outgoing">📤 Outgoing</TabsTrigger>
           </TabsList>
           <TabsContent value="incoming">
-            <DocumentTable documents={incoming} loading={loading} emptyMessage="No incoming documents expected." />
+            <DocumentTable documents={incoming.filter(d => d.status !== "Received")} loading={loading} emptyMessage="No active incoming documents." />
           </TabsContent>
           <TabsContent value="outgoing">
-            <DocumentTable documents={outgoing} loading={loading} emptyMessage="No outgoing documents sent." />
+            <DocumentTable documents={outgoing.filter(d => d.status !== "Received")} loading={loading} emptyMessage="No active outgoing documents." />
           </TabsContent>
         </Tabs>
       )}

@@ -4,6 +4,7 @@ import {
   ScanLine,
   FileText,
   LogOut,
+  Archive,
 } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useAuth } from "@/hooks/useAuth";
@@ -26,6 +27,7 @@ const navItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Outbox", url: "/outbox", icon: Send },
   { title: "Inbox", url: "/inbox", icon: ScanLine },
+  { title: "History", url: "/history", icon: Archive },
 ];
 
 export function AppSidebar() {

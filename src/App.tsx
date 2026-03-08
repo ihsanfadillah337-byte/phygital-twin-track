@@ -8,6 +8,7 @@ import AppLayout from "@/components/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Outbox from "./pages/Outbox";
 import Inbox from "./pages/Inbox";
+import History from "./pages/History";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import { Loader2 } from "lucide-react";
@@ -31,6 +32,7 @@ const AppRoutes = () => (
     <Route path="/" element={<ProtectedRoute><AppLayout><Dashboard /></AppLayout></ProtectedRoute>} />
     <Route path="/outbox" element={<ProtectedRoute><AppLayout><Outbox /></AppLayout></ProtectedRoute>} />
     <Route path="/inbox" element={<ProtectedRoute><AppLayout><Inbox /></AppLayout></ProtectedRoute>} />
+    <Route path="/history" element={<ProtectedRoute><AppLayout><History /></AppLayout></ProtectedRoute>} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 );
