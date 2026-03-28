@@ -39,8 +39,8 @@ export function AppSidebar() {
     <Sidebar collapsible="icon">
       <SidebarHeader className="p-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sidebar-accent">
-            <FileText className="h-5 w-5 text-sidebar-accent-foreground" />
+          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg overflow-hidden border">
+            <img src="/logo.png" alt="DocuTwin Logo" className="h-full w-full object-cover bg-white" />
           </div>
           {!collapsed && (
             <div className="flex flex-col">

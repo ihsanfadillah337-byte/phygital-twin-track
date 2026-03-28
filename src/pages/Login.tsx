@@ -64,8 +64,8 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-background p-4">
       <Card className="w-full max-w-sm shadow-lg">
         <CardHeader className="text-center space-y-2">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-primary">
-            <FileText className="h-6 w-6 text-primary-foreground" />
+          <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl overflow-hidden shadow-sm border bg-white border-border/50">
+            <img src="/logo.png" alt="DocuTwin Logo" className="h-full w-full object-cover" />
           </div>
           <CardTitle className="text-xl">DocuTwin</CardTitle>
           <CardDescription>Phygital Document Tracking System</CardDescription>
